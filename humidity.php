@@ -158,7 +158,8 @@ foreach($sensor_data as $row){
                                         Bar Chart Example
                                     </div>
                                     <!--<div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>-->
-                                    <div id="piechart" style="width:100%; max-width:600px; height:500px;"></div>
+                                    <!--<div id="piechart" style="width:100%; max-width:600px; height:500px;"></div>-->
+                                    <div class="card-body"><canvas id="myChart2" style="width:100%;max-width:600px"></canvas></div>
                                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                                 </div>
                             </div>
@@ -169,8 +170,9 @@ foreach($sensor_data as $row){
                                         Pie Chart Example
                                     </div>
                                     <!--<div class="card-body"><canvas id="myPieChart" width="100%" height="50"></canvas></div>-->
-                                    <div id="myChart" style="width:100%; max-width: 900px; height:500px;"></div>
-                                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                                    <!--<div id="myChart" style="width:100%; max-width: 900px; height:500px;"></div>-->
+                                    <div class="card-body"><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
+                                    <div class="card-footer small text-muted">Updated <?php echo date("Y.m.d")?></div>
                                 </div>
                             </div>
                         </div>
@@ -192,57 +194,101 @@ foreach($sensor_data as $row){
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script>
-google.charts.load('current',{packages:['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        
+        <!-- SCRIPTS -->
 
-function drawChart() {
-// Set Data
-const data = google.visualization.arrayToDataTable([
-  ['Price', 'Size'],
-  <?php foreach($sensor_data as $row){
-           $temp =  (float)$row['Temperature']; ?>
-            ["Data 01", <?php echo $temp; ?>],
-          <?php }?>
-]);
-// Set Options
-const options = {
-  title: 'House Prices vs. Size',
-  hAxis: {title: 'Square Meters'},
-  vAxis: {title: 'Price in Millions'},
-  legend: 'none'
-};
-// Draw
-const chart = new google.visualization.LineChart(document.getElementById('myChart'));
-chart.draw(data, options);
-}
+        <script>
+        
+        var yValues = [];
+
+        var xValues = [];
+
+        <?php foreach($sensor_data as $row) { 
+    
+            $temp =  (int)$row['Temperature'];
+
+            $humidity = (float)$row['Humidity'];
+        
+            $record_time = $row['Record_ID'];
+        ?>
+    
+            yValues.push(<?php echo $humidity; ?>);
+      
+            xValues.push(<?php echo $record_time; ?>);
+
+        <?php } ?>
+        
+        var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"];
+
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues, datasets: [{ backgroundColor: barColors, data: yValues }]},
+        options: {
+           title: 
+           {display: true, text: "World Wide Wine Production 2018"}
+        }
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var yValues = [];
+
+var xValues = [];
+
+<?php foreach($sensor_data as $row) { 
+    
+    $temp =  (int)$row['Temperature'];
+
+    $humidity = (float)$row['Humidity'];
+
+    $record_time = $row['Record_Date'];
+?>
+
+    yValues.push(<?php echo $humidity; ?>);
+
+    xValues.push(<?php echo $record_time; ?>);
+
+<?php } ?>
+
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
 </script>
 
-
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['students', 'contribution'],
-          <?php foreach($sensor_data as $row){
-           $temp =  (float)$row['Temperature']; ?>
-            ["Data 01", <?php echo $temp; ?>],
-          <?php }?>
-        ]);
-
-        var options = {
-          title: 'Students and their contribution'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
 
 
 </body>
