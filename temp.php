@@ -34,7 +34,7 @@ $sensor_data = $stmt->get_result();
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
-                    This dashboard uses line charts, pie charts, and bar charts to display Temperature statistics for the given time period. Using datatable, you may view more information
+                        This dashboard uses line charts, pie charts, and bar charts to display Temperature statistics for the given time period. Using datatable, you may view more information
                     </div>
                 </div>
                 <div class="card mb-4">
@@ -74,8 +74,8 @@ $sensor_data = $stmt->get_result();
                     </div>
                 </div>
 
-                <?php 
-                
+                <?php
+
                 $SQL = "SELECT * FROM `sensor_box_01`;";
 
                 $stmt = $conn->prepare($SQL);
@@ -83,49 +83,49 @@ $sensor_data = $stmt->get_result();
                 $stmt->execute();
 
                 $all_data = $stmt->get_result();
-                
+
                 ?>
 
                 <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Record ID</th>
-                                            <th>Record Date</th>
-                                            <th>Record Time</th>
-                                            <th>Temperature(c)</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Record ID</th>
-                                            <th>Record Date</th>
-                                            <th>Record Time</th>
-                                            <th>Temperature(c)</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php foreach ($all_data as $row) { ?>
-                                            <tr>
-                                                <td><?php echo $row['Record_ID'] ?></td>
-                                                <td><?php echo $row['Record_Date'] ?></td>
-                                                <td><?php echo $row['Record_Time'] ?></td>
-                                                <td><?php echo $row['Temperature'].'C' ?></td>
-                                            </tr>
-                                        <?php } ?>    
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        DataTable
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>Record ID</th>
+                                    <th>Record Date</th>
+                                    <th>Record Time</th>
+                                    <th>Temperature(c)</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Record ID</th>
+                                    <th>Record Date</th>
+                                    <th>Record Time</th>
+                                    <th>Temperature(c)</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php foreach ($all_data as $row) { ?>
+                                    <tr>
+                                        <td><?php echo $row['Record_ID'] ?></td>
+                                        <td><?php echo $row['Record_Date'] ?></td>
+                                        <td><?php echo $row['Record_Time'] ?></td>
+                                        <td><?php echo $row['Temperature'] . 'C' ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </div>
         </main>
 
-        <?php include 'assets/components/footer.php'?>
+        <?php include 'assets/components/footer.php' ?>
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -225,17 +225,19 @@ $sensor_data = $stmt->get_result();
                 },
                 scales: {
                     yAxes: [{
-                        scaleLabel:{
+                        scaleLabel: {
                             display: true,
                             labelString: 'Temperature(c)'
-                        }}],
-                    
+                        }
+                    }],
+
                     xAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
                             labelString: 'Capture Time'
-                        }}],
+                        }
+                    }],
                 }
             }
         });
@@ -290,21 +292,24 @@ $sensor_data = $stmt->get_result();
                             min: 0,
                             max: 100
                         },
-                        scaleLabel:{
+                        scaleLabel: {
                             display: true,
                             labelString: 'Temperature(c)'
-                        }}],
-                    
+                        }
+                    }],
+
                     xAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
                             labelString: 'Capture Time'
-                        }}],
-                }}
+                        }
+                    }],
+                }
+            }
         });
     </script>
-    
+
 </body>
 
 
@@ -312,7 +317,7 @@ $sensor_data = $stmt->get_result();
 <!-- ADD JS SCRIPTS FOR DATATABLES HERE-->
 
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        
+
 <script src="js/datatables-simple-demo.js"></script>
 
 </html>
