@@ -51,7 +51,7 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="sb-sidenav-menu-heading">Addons</div>
+                    <div class="sb-sidenav-menu-heading">Environment Factors</div>
                     <a class="nav-link" href="charts.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Charts
@@ -59,6 +59,26 @@
                     <a class="nav-link" href="tables.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Tables
+                    </a>
+                    <a class="nav-link" href="humidity.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-droplet fa-bounce"></i></div>
+                        Humidity
+                    </a>
+                    <a class="nav-link" href="heatindex.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-fire fa-fade"></i></div>
+                        Heat-Index
+                    </a>
+                    <a class="nav-link" href="soilMoisture.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-plant-wilt fa-fade"></i></div>
+                        Soil-Moisture
+                    </a>
+                    <a class="nav-link" href="temp.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-temperature-three-quarters fa-beat-fade"></i></div>
+                        Temperature
+                    </a>
+                    <a class="nav-link" href="waterLv.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-water fa-beat"></i></div>
+                        Water-Level
                     </a>
                 </div>
             </div>
