@@ -51,7 +51,7 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="sb-sidenav-menu-heading">Environment Factors</div>
+                    <div class="sb-sidenav-menu-heading">Factors</div>
                     <a class="nav-link" href="charts.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Charts
@@ -79,6 +79,10 @@
                     <a class="nav-link" href="waterLv.php">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-water fa-beat"></i></div>
                         Water-Level
+                    </a>
+                    <a class="nav-link" href="gasLv.php">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-fire-flame-curved fa-beat"></i></div>
+                        Gas-Level
                     </a>
                 </div>
             </div>
