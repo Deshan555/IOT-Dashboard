@@ -4,6 +4,8 @@
 
 Visualize your sensor data like never before! This advanced web application is built using HTML, CSS, JavaScript, Bootstrap, and Chart.js to deliver an exceptional user experience. Keep a close eye on vital sensor data such as humidity, heat index, temperature, soil moisture, gas level, and hydroponic solution level. Our application boasts interactive bar charts, dynamic pie charts, and insightful area charts to help you make data-driven decisions with ease.
 
+⚠️ Before Use That Repo Please Visit that repo and read all instructions : https://github.com/Deshan555/IOT-Smart_Farming
+
 ## ✨ Features that Illuminate:
 
 - **Real-time Visualization**: Stay updated with real-time data to monitor changes as they happen.
