@@ -65,6 +65,9 @@ Before you embark on your data journey, ensure you have the following requiremen
 
 _Include a few captivating screenshots of the dashboard showcasing its stunning charts and visualizations._
 
+![application-screen](https://github.com/Deshan555/IOT-Dashboard/blob/master/app/Screenshot_36.png)
+
+![application-screen](https://github.com/Deshan555/IOT-Dashboard/blob/master/app/Screenshot_37.png)
 ## 🙌 Contributing - Let's Innovate Together!
 
 Your creativity and ideas are invaluable! Join us in enhancing the IOT Dashboard Application. Share your thoughts, report issues, propose exciting features, or submit pull requests to the [GitHub repository](https://github.com/your-username/iot-dashboard). Together, let's shape the future of data visualization.
