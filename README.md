@@ -86,7 +86,7 @@ This project is licensed under the [MIT License](LICENSE). We believe in opennes
 
 ## 📞 Contact - Reach Out!
 
-For questions, feedback, or just to say hi, drop us a line at iot.dashboard@example.com. We're here to ensure you have a seamless experience with our IOT Dashboard Application.
+For questions, feedback, or just to say hi, drop us a line at djayashanka750@gmail.com. We're here to ensure you have a seamless experience with our IOT Dashboard Application.
 
 ## 🎉 Experience the IOT Revolution - Dive in!
 
